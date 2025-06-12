@@ -44,6 +44,16 @@
     <footer class="pie-pagina-global">
         <p>Creado por Pablo Rodríguez Tapia <br> para DesafioLatam - Prueba - Desarrollo de portafolio</p>
     </footer>
+<script>
+    // Seleccionamos el botón de la hamburguesa y el menú de navegación
+    const botonHamburguesa = document.querySelector('.boton-hamburguesa');
+    const navegacionPrincipal = document.querySelector('.navegacion-principal');
 
+    // Añadimos un "escuchador" de clics al botón
+    botonHamburguesa.addEventListener('click', () => {
+        // Cada vez que se hace clic, "alternamos" la clase 'menu-abierto' en el menú
+        navegacionPrincipal.classList.toggle('menu-abierto');
+    });
+</script>
 </body>
 </html>

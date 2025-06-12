@@ -460,48 +460,64 @@ body {
    ==== ESTILOS RESPONSIVOS
    ============================================= */
 
+.boton-hamburguesa {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    background: none;
+    border: 1px solid #ffff00;
+    color: #ffff00;
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+/* Los estilos responsivos que ya tenías, pero con los nuevos ajustes para el menú */
 @media (max-width: 900px) {
-    .pagina-principal {
-        overflow: auto;
-    }
-    
-    .contenedor-portafolio {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
+    /* ... (aquí van las reglas responsivas que ya tenías) ... */
+
+    /* AHORA AÑADIMOS ESTOS CAMBIOS */
 
     .barra-lateral {
-        position: static;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .area-contenido {
-        height: auto;
+        padding: 20px; /* Reducimos el padding en móvil */
+        align-items: center; /* Centramos el contenido de la barra */
     }
 
-    .pie-pagina-global {
-        position: static;
-    }
-
-    .contenedor-cv,
-    .contenedor-contacto,
-    .contenedor-sobre-mi {
-        grid-template-columns: 1fr;
-    }
-    
-    .titulo-seccion, .cv-encabezado h1 {
-        font-size: 26px;
-    }
-    
-    .nombre-perfil {
-        font-size: 24px;
-    }
-
-    .tarjeta-proyecto {
+    .seccion-perfil {
+        width: 100%;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
+    
+    /* Mostramos el botón de hamburguesa en móviles */
+    .boton-hamburguesa {
+        display: block;
+        margin-top: 20px;
+    }
+    
+    /* Ocultamos el menú de navegación por defecto en móviles */
+    .navegacion-principal {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    /* Cuando el menú está abierto, le damos una altura máxima para que se muestre */
+    .navegacion-principal.menu-abierto {
+        max-height: 500px; /* Una altura suficiente para que quepan todos los botones */
+        margin-top: 20px;
+    }
+
+    /* Ajustamos el pie de página para que quede al final de la barra lateral */
+    .pie-pagina-lateral {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
 }
 
 /* =============================================
