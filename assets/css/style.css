@@ -44,7 +44,6 @@ body {
     text-align: center;
 }
 
-/* ... (el resto de los estilos de .barra-lateral y sus hijos permanecen igual) ... */
 .seccion-perfil {
     flex-grow: 1;
     display: flex;
@@ -238,9 +237,6 @@ body {
     margin-right: 12px;
 }
 
-/* =============================================
-   ==== COMPONENTES ESPECIALES
-   ============================================= */
 .tarjeta-conocimiento--aprendizaje {
     border: 2px dashed #ff9800; 
     position: relative;
