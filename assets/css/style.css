@@ -21,7 +21,13 @@ body {
 .contenedor-portafolio {
     display: grid;
     grid-template-columns: 320px 1fr;
+    /*height: 100vh;*/
+
+}
+
+.area-contenido {
     height: 100vh;
+    overflow-y: auto;
 }
 
 /* =============================================
@@ -557,20 +563,22 @@ body {
 /* =============================================
    ==== BARRA DE SCROLL PERSONALIZADA
    ============================================= */
-::-webkit-scrollbar {
+.area-contenido::-webkit-scrollbar {
   width: 12px;
 }
-::-webkit-scrollbar-track {
+.area-contenido::-webkit-scrollbar-track {
   background: #222;
 }
-::-webkit-scrollbar-thumb {
+.area-contenido::-webkit-scrollbar-thumb {
   background-color: #ffff00;
   border-radius: 10px;
   border: 3px solid #222;
 }
-::-webkit-scrollbar-thumb:hover {
+.area-contenido::-webkit-scrollbar-thumb:hover {
   background-color: #e6e600;
 }
+
+/* Para Firefox, se aplica al iframe directamente */
 html {
   scrollbar-width: thin;
   scrollbar-color: #ffff00 #222;
