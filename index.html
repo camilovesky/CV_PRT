@@ -22,12 +22,20 @@
                 <h1 class="nombre-perfil">Pablo Rodríguez Tapia</h1>
                 <p class="titulo-perfil">Ingeniero Redes Telecomunicaciones</p>
                 
-                <a href="assets/seccion/sobre-mi.html" class="boton-navegacion" target="content-frame">Sobre Mí</a>
-                <a href="assets/seccion/experiencia.html" class="boton-navegacion" target="content-frame">Experiencia</a>
-                <a href="assets/seccion/conocimientos.html" class="boton-navegacion" target="content-frame">Conocimientos</a>
-                <a href="assets/seccion/proyectos.html" class="boton-navegacion" target="content-frame">Proyectos</a>
-                <a href="assets/seccion/contacto.html" class="boton-navegacion" target="content-frame">Contacto</a>
-                <a href="assets/arch/CV-Pablo_Rodriguez.pdf" class="boton-navegacion" download="CV Pablo Rodríguez.pdf">Descargar CV</a>
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="boton-hamburguesa" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                
+                <nav class="navegacion-principal">
+                    <a href="assets/seccion/sobre-mi.html" class="boton-navegacion" target="content-frame">Sobre Mí</a>
+                    <a href="assets/seccion/experiencia.html" class="boton-navegacion" target="content-frame">Experiencia</a>
+                    <a href="assets/seccion/conocimientos.html" class="boton-navegacion" target="content-frame">Conocimientos</a>
+                    <a href="assets/seccion/proyectos.html" class="boton-navegacion" target="content-frame">Proyectos</a>
+                    <a href="assets/seccion/contacto.html" class="boton-navegacion" target="content-frame">Contacto</a>
+                    <a href="assets/seccion/curriculum.html" class="boton-navegacion" target="content-frame">Ver CV Online</a>
+                    <a href="assets/arch/CV-Pablo_Rodriguez.pdf" class="boton-navegacion" download="CV Pablo Rodríguez.pdf">Descargar CV</a>
+                </nav>
             </div>
         </aside>
 
@@ -42,18 +50,12 @@
     </div>
 
     <footer class="pie-pagina-global">
-        <p>Creado por Pablo Rodríguez Tapia <br> para DesafioLatam - Prueba - Desarrollo de portafolio</p>
+        <div class="enlaces-sociales-footer">
+            <a href="https://cl.linkedin.com/in/pablo-rodriguez-tapia" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/TheSpamLoc" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p>Creado por Pablo Rodríguez Tapia | Desafío Latam - Desarrollo de Portafolio</p>
     </footer>
-<script>
-    // Seleccionamos el botón de la hamburguesa y el menú de navegación
-    const botonHamburguesa = document.querySelector('.boton-hamburguesa');
-    const navegacionPrincipal = document.querySelector('.navegacion-principal');
 
-    // Añadimos un "escuchador" de clics al botón
-    botonHamburguesa.addEventListener('click', () => {
-        // Cada vez que se hace clic, "alternamos" la clase 'menu-abierto' en el menú
-        navegacionPrincipal.classList.toggle('menu-abierto');
-    });
-</script>
 </body>
 </html>
