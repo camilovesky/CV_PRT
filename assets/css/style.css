@@ -1,0 +1,538 @@
+/* =============================================
+   ==== ESTILOS GENERALES Y ESTRUCTURA
+   ============================================= */
+/* CAMBIO: La regla "overflow: hidden" se mueve a una clase específica */
+.pagina-principal {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: #ccc;
+    --color-rejilla: rgba(87, 122, 21, 0.1);
+    background-image:
+        linear-gradient(to right, var(--color-rejilla) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--color-rejilla) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.contenedor-portafolio {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: 100vh;
+}
+
+/* =============================================
+   ==== BARRA LATERAL
+   ============================================= */
+.barra-lateral {
+    background-color: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(197, 194, 4, 0.473);
+    text-align: center;
+}
+
+/* ... (el resto de los estilos de .barra-lateral y sus hijos permanecen igual) ... */
+.seccion-perfil {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.imagen-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    border: 3px solid #333;
+    overflow: hidden;
+}
+.imagen-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nombre-perfil {
+    font-size: 28px;
+    color: #fff;
+    margin: 0 0 5px 0;
+}
+.titulo-perfil {
+    margin: 0 0 30px 0;
+    font-size: 14px;
+}
+.boton-navegacion {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #ffff00;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.boton-navegacion:hover {
+    background-color: #ffff00;
+    color: #111;
+}
+
+/* =============================================
+   ==== PIE DE PÁGINA (FOOTER)
+   ============================================= */
+/* CAMBIO: Nuevos estilos para un footer global y fijo */
+.pie-pagina-global {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(5px);
+    color: #aaa;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 13px;
+    z-index: 100;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.pie-pagina-global p {
+    margin: 0;
+}
+
+
+/* ... (el resto del archivo CSS desde "ÁREA DE CONTENIDO" hasta el final permanece igual) ... */
+/* =============================================
+   ==== ÁREA DE CONTENIDO (IFRAME)
+   ============================================= */
+.area-contenido {
+    overflow: hidden;
+}
+.area-contenido iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+/* =============================================
+   ==== ESTILOS DEL CONTENIDO DEL IFRAME
+   ============================================= */
+.contenedor-contenido {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px 40px;
+}
+.titulo-seccion {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+.titulo-seccion::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #ffff00;
+}
+/* =============================================
+   ==== SECCIONES Y TARJETAS
+   ============================================= */
+.contenedor-sobre-mi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+.descripcion-sobre-mi p, .info-sobre-mi li {
+    font-size: 16px;
+    color: #cccccc;
+}
+.info-sobre-mi ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.info-sobre-mi li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.etiqueta-info {
+    background-color: #ffff00;
+    color: #111;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 5px;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+.rejilla-servicios, .rejilla-conocimientos {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.tarjeta-servicio, .tarjeta-conocimiento {
+    background-color: rgba(30, 30, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: left;
+}
+.tarjeta-servicio:hover, .tarjeta-conocimiento:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    border-color: #ffff00;
+}
+.icono-servicio, .icono-conocimiento {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 0, 0.1);
+    color: #ffff00;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.titulo-servicio, .categoria-conocimiento {
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 0;
+}
+.descripcion-servicio {
+    color: #cccccc;
+    font-size: 15px;
+}
+.lista-habilidades {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+.lista-habilidades li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #cccccc;
+    display: flex;
+    align-items: center;
+}
+.lista-habilidades li::before {
+    content: '✔';
+    color: #ffff00;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* =============================================
+   ==== COMPONENTES ESPECIALES
+   ============================================= */
+.tarjeta-conocimiento--aprendizaje {
+    border: 2px dashed #ff9800; 
+    position: relative;
+}
+.tarjeta-conocimiento--aprendizaje:hover {
+    transform: none;
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.25);
+    border-color: #ff9800;
+}
+.etiqueta-aprendizaje {
+    position: absolute;
+    top: -1px;
+    right: 20px;
+    background-color: #ff9800;
+    color: #ffffff;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0 0 5px 5px;
+}
+.tarjeta-conocimiento--aprendizaje .icono-conocimiento {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+}
+.lista-habilidades--aprendizaje li::before {
+    content: '⚙️';
+    margin-right: 12px;
+}
+
+/* =============================================
+   ==== SECCIÓN EXPERIENCIA (LÍNEA DE TIEMPO)
+   ============================================= */
+.linea-de-tiempo {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding-left: 30px;
+}
+.linea-de-tiempo::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.15);
+    top: 0;
+    bottom: 0;
+    left: 15px;
+}
+.item-tiempo {
+    padding: 10px 0 30px 40px;
+    position: relative;
+}
+.punto-tiempo {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #1a1a1a;
+    border: 3px solid #ffff00;
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.contenido-tiempo {
+    background-color: rgba(30, 30, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px 25px;
+}
+.fecha-tiempo {
+    color: #ffff00;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.titulo-tiempo {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+.titulo-tiempo .empresa {
+    color: #cccccc;
+    font-weight: normal;
+    font-size: 18px;
+}
+.descripcion-tiempo {
+    margin: 0;
+    font-size: 15px;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+/* =============================================
+   ==== SECCIÓN PROYECTOS
+   ============================================= */
+.contenedor-proyectos {
+    width: 100%;
+}
+.tarjeta-proyecto {
+    display: flex;
+    background-color: rgba(30, 30, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    gap: 30px;
+    align-items: center;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.tarjeta-proyecto:hover {
+    border-color: #ffff00;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+.imagen-proyecto {
+    width: 220px;
+    height: 160px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.imagen-proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.detalles-proyecto {
+    flex: 1;
+}
+.titulo-proyecto {
+    color: #ffffff;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.etiquetas-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+.etiquetas-proyecto span {
+    background-color: rgba(255, 255, 0, 0.1);
+    color: #ffff00;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.descripcion-proyecto {
+    color: #cccccc;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =============================================
+   ==== SECCIÓN CONTACTO
+   ============================================= */
+.contenedor-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+}
+.info-contacto h3 {
+    font-size: 24px;
+    color: #ffffff;
+}
+.enlaces-profesionales a {
+    display: flex;
+    align-items: center;
+    color: #cccccc;
+    text-decoration: none;
+    margin: 20px 0;
+    transition: color 0.3s ease;
+}
+.enlaces-profesionales a:hover {
+    color: #ffff00;
+}
+.enlaces-profesionales i {
+    font-size: 22px;
+    width: 30px;
+    margin-right: 15px;
+}
+.formulario-contacto input, .formulario-contacto textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+.formulario-contacto input:focus, .formulario-contacto textarea:focus {
+    outline: none;
+    border-color: #ffff00;
+}
+.boton-enviar {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ffff00;
+    background-color: transparent;
+    color: #ffff00;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.boton-enviar:hover {
+    background-color: #ffff00;
+    color: #111;
+}
+
+/* =============================================
+   ==== ESTILOS RESPONSIVOS
+   ============================================= */
+@media (max-width: 900px) {
+    .contenedor-portafolio {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow-y: auto;
+    }
+    .barra-lateral {
+        position: static;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .area-contenido {
+        height: auto;
+    }
+    .contenedor-contacto, .contenedor-sobre-mi {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .tarjeta-proyecto {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .imagen-proyecto {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* =============================================
+   ==== BARRA DE SCROLL PERSONALIZADA
+   ============================================= */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #222;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ffff00;
+  border-radius: 10px;
+  border: 3px solid #222;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e6e600;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ffff00 #222;
+}
+
+/* =============================================
+   ==== AJUSTES DE CV (ENCABEZADO Y SECCIONES FULL)
+   ============================================= */
+
+.cv-encabezado {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 0, 0.2);
+}
+
+.cv-encabezado h1 {
+    color: #ffffff;
+    font-size: 36px;
+    margin: 0 0 5px 0;
+}
+
+.cv-encabezado p {
+    color: #ffff00;
+    font-size: 18px;
+    margin: 0;
+}
+
+.cv-apartado-full {
+    margin-bottom: 30px;
+}
