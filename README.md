@@ -1,5 +1,6 @@
 Prueba - Desarrollo de portafolio
 ========================================
+Curriculum y Portafolio creado solo con HTML y CSS, no responsive.
 https://thespamloc.github.io/CV_PRT/
 
 FORK - 1
