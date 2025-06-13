@@ -21,13 +21,7 @@ body {
 .contenedor-portafolio {
     display: grid;
     grid-template-columns: 320px 1fr;
-    /*height: 100vh;*/
-
-}
-
-.area-contenido {
     height: 100vh;
-    overflow-y: auto;
 }
 
 /* =============================================
@@ -36,7 +30,7 @@ body {
 .barra-lateral {
     background-color: rgba(15, 15, 15, 0.8);
     backdrop-filter: blur(5px);
-    padding: 40px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,9 +38,10 @@ body {
     text-align: center;
 }
 
+/* ... (el resto de los estilos de .barra-lateral y sus hijos permanecen igual) ... */
 .seccion-perfil {
     flex-grow: 1;
-    display: flex;
+    display: flow-root;
     flex-direction: column;
     justify-content: center;
 }
@@ -93,24 +88,27 @@ body {
 /* =============================================
    ==== PIE DE PÁGINA (FOOTER)
    ============================================= */
-
-/* CAMBIO: Nuevos estilos para un footer que está dentro del contenido */
-.pie-pagina-contenido {
-    text-align: center;
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* CAMBIO: Nuevos estilos para un footer global y fijo */
+.pie-pagina-global {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(5px);
     color: #aaa;
-}
-
-.pie-pagina-contenido p {
+    text-align: center;
+    padding: 8px 0;
     font-size: 13px;
-    margin-top: 20px;
-    margin-bottom: 0;
+    z-index: 100;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.pie-pagina-global p {
+    margin: 0;
 }
 
 
-
+/* ... (el resto del archivo CSS desde "ÁREA DE CONTENIDO" hasta el final permanece igual) ... */
 /* =============================================
    ==== ÁREA DE CONTENIDO (IFRAME)
    ============================================= */
@@ -237,6 +235,9 @@ body {
     margin-right: 12px;
 }
 
+/* =============================================
+   ==== COMPONENTES ESPECIALES
+   ============================================= */
 .tarjeta-conocimiento--aprendizaje {
     border: 2px dashed #ff9800; 
     position: relative;
@@ -455,98 +456,31 @@ body {
     color: #111;
 }
 
-
-/* =============================================
-   ==== ESTILOS DEL MENÚ DE HAMBURGUESA
-   ============================================= */
-
-.menu-toggle {
-    display: none;
-}
-
-.boton-hamburguesa {
-    display: none;
-    background: none;
-    border: 1px solid #ffff00;
-    color: #ffff00;
-    font-size: 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 8px 12px;
-}
-
 /* =============================================
    ==== ESTILOS RESPONSIVOS
    ============================================= */
 @media (max-width: 900px) {
-    .pagina-principal {
-        overflow: auto;
-    }
-    
     .contenedor-portafolio {
         grid-template-columns: 1fr;
         height: auto;
+        overflow-y: auto;
     }
-
     .barra-lateral {
         position: static;
-        padding: 20px;
-        border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        align-items: center;
     }
-
-    .seccion-perfil {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .area-contenido {
+        height: auto;
     }
-
-    .pie-pagina-global, .pie-pagina-lateral {
-        position: static;
-        width: 100%;
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .boton-hamburguesa {
-        display: block;
-        margin-top: 20px;
-    }
-    
-    .navegacion-principal {
-        max-height: 0;
-        overflow: hidden;
-        width: 100%;
-        transition: max-height 0.5s ease-in-out;
-    }
-
-    .menu-toggle:checked ~ .navegacion-principal {
-        max-height: 500px;
-        margin-top: 20px;
-    }
-
-    .contenedor-cv,
-    .contenedor-contacto,
-    .contenedor-sobre-mi {
+    .contenedor-contacto, .contenedor-sobre-mi {
         grid-template-columns: 1fr;
     }
-    
-    .titulo-seccion, .cv-encabezado h1 {
-        font-size: 26px;
-    }
-    
-    .nombre-perfil {
-        font-size: 24px;
-    }
-
+}
+@media (max-width: 768px) {
     .tarjeta-proyecto {
         flex-direction: column;
         align-items: flex-start;
     }
-
     .imagen-proyecto {
         width: 100%;
         margin-right: 0;
@@ -554,27 +488,23 @@ body {
     }
 }
 
-
-
 /* =============================================
    ==== BARRA DE SCROLL PERSONALIZADA
    ============================================= */
-.area-contenido::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 12px;
 }
-.area-contenido::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: #222;
 }
-.area-contenido::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: #ffff00;
   border-radius: 10px;
   border: 3px solid #222;
 }
-.area-contenido::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background-color: #e6e600;
 }
-
-/* Para Firefox, se aplica al iframe directamente */
 html {
   scrollbar-width: thin;
   scrollbar-color: #ffff00 #222;
