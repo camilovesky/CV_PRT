@@ -33,7 +33,7 @@
                 </div>
                 <div class="formulario-contacto">
                     <form action="#" method="POST">
-                        <input type="text" name="name" placeholder="Tu Nombre" required>
+                        <input type="text" name="name" placeholder="Tu Nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo se permiten letras y espacios">
                         <input type="email" name="email" placeholder="Tu Email" required>
                         <input type="text" name="subject" placeholder="Asunto" required>
                         <textarea name="message" rows="6" placeholder="Tu Mensaje" required></textarea>
